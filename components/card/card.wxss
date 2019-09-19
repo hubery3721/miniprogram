@@ -1,0 +1,14 @@
+.com-card {
+  margin-bottom: 24rpx;
+  background: #fff;
+  padding: 22rpx 0;
+}
+
+.com-card .head {
+  margin-bottom: 22rpx;
+  border-left: 8rpx solid #499dff;
+  padding: 0 32rpx 0 22rpx;
+  color: #222;
+  font-size: 28rpx;
+  line-height: 30rpx;
+}

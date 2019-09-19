@@ -1,0 +1,4 @@
+<view class="com-card">
+	<view class="head">{{cardTitle}}<slot name="btn"></slot></view>
+	<slot name="cnt"></slot>
+</view>
