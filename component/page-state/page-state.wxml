@@ -1,0 +1,50 @@
+<!-- 加载中 -->
+<template wx:if="{{ state=='loading' }}" is="page-loading" data="{{top:loadingTop, bottom:loadingBottom}}"></template>
+<!-- NoData提示 -->
+<template wx:elif="{{ state=='nodata' }}" is="page-nodata"
+    data="{{top:nodataTop, bottom:nodataBottom, title:title, desc: desc,isNoImage:isNoImage,imageUrl:imageUrl}}"></template>
+<!-- 页面错误 -->
+<template wx:elif="{{ state=='error' }}" is="page-error"
+    data="{{ top:errorTop,catchtap:'_bindPageErrorHandler', title:title,desc:desc,isNoImage:isNoImage,isOffLine:isOffLine}}">
+</template>
+
+<!-- 加载中 模版 -->
+<template name="page-loading">
+    <view class="container"
+        style="{{top>0? ('margin-top:' + top + 'vw;'): ''}}{{bottom > 0 ? 'margin-bottom:'+bottom+'vw;':''}}">
+        <view class="loader">
+        </view>
+    </view>
+</template>
+
+<!-- 没数据 -->
+<template name="page-nodata">
+    <view class="container"
+        style="{{top>0? ('margin-top:' + top + 'vw'): ''}};{{bottom > 0 ? ('margin-bottom:' + bottom + 'vw;'): ''}}">
+        <view wx:if="{{!isNoImage}}" class="page-nodata-image">
+            <image class="img" src="{{imageUrl.length ? imageUrl : '/resources/images/img_no_data.png'}}"></image>
+        </view>
+        <view class="page-title">
+            <text class="page-title-text">{{title ? title : '这里空空如也' }}</text>
+        </view>
+        <view class="page-desc">
+            <text class="page-desc-text">{{desc}}</text>
+        </view>
+    </view>
+</template>
+
+<!-- 页面出错提示模板 -->
+<template name="page-error">
+    <view class="container" style="{{top>0? ('margin-top:' + top + 'vw'): ''}}" catchtap="{{catchtap}}">
+        <view wx:if="{{!isNoImage}}" class="page-error-image">
+            <image class="img" src="/resources/images/img_warning.png" />
+        </view>
+        <view class="page-title">
+            <text class="page-title-text">{{isOffLine ? '信号可能飞上天了哦～' : title}}</text>
+        </view>
+        <view wx:if="{{!isOffLine}}" class="page-desc">
+            <text class="page-desc-text">{{desc}}</text>
+        </view>
+        <view wx:else class="retry" hover-class="hover-btn">点击重试</view>
+    </view>
+</template>

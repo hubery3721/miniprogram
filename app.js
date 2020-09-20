@@ -1,13 +1,10 @@
-import {
-  Global
-} from './process/global.js'
+import { GlobalBiz } from './process/globalBiz.js'
 import {
   SystemInfo
 } from './app.systemInfo';
 import {
   StorageHelper
 } from './utils/storageHelper';
-const GlobalModel = new Global()
 
 //app.js
 App({
@@ -19,7 +16,7 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        GlobalModel.getUnionId({
+        GlobalBiz.getUnionId({
           'jscode': res.code
         }).then(res => {
           console.log("RES", res)

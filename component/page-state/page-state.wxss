@@ -1,0 +1,130 @@
+/*
+    loading 加载中 动画
+*/
+
+.container {
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loader {
+  width: 60rpx;
+  height: 60rpx;
+  animation: circle infinite 1s linear;
+  border: 6rpx solid #ff5e68;
+  border-top-color: transparent;
+  border-radius: 100%;
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .ball-pulse .ball-pulse-item {
+  width: 4vw;
+  height: 4vw;
+  background: #ff5e68;
+  border-radius: 50%;
+  margin: 4rpx;
+  display: inline-block;
+}
+
+.ball-pulse .ball-1 {
+  animation: scale 1s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+}
+
+.ball-pulse .ball-2 {
+  animation: scale 1s 0.16s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+}
+
+.ball-pulse .ball-3 {
+  animation: scale 1s 0.32s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+}
+
+@keyframes scale {
+  30% {
+    transform: scale(0.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
+
+/* 无数据 */
+
+.page-nodata-image {
+  position: relative;
+  top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.page-nodata-image .img {
+  width: 400rpx;
+  height: 200rpx;
+}
+
+.page-title {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  padding-top: 4vw;
+}
+
+.page-title .page-title-text {
+  font-size: 4vw;
+  color: #666;
+}
+
+.page-desc {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  padding-top: 1.33vw;
+}
+
+.page-desc .page-desc-text {
+  font-size: 3.73vw;
+  color: #666;
+}
+
+/* 页面错误 */
+
+.page-error-image {
+  position: relative;
+  width: 100%;
+  height: 24.8vw;
+  padding-top: 15vw;
+  display: flex;
+  justify-content: center;
+}
+
+.page-error-image .img {
+  width: 400rpx;
+  height: 200rpx;
+}
+
+.retry {
+  height: 72rpx;
+  line-height: 72rpx;
+  width: 192rpx;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(255, 125, 90, 1) 0%, rgba(255, 100, 90, 1) 100%);
+  border-radius: 200rpx;
+  margin-top: 50rpx;
+  font-size: 32rpx;
+}
+
+.hover-btn {
+  opacity: 0.8;
+}
